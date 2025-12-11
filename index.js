@@ -11,10 +11,14 @@ import cors from "cors";
 import orderControlRouter from "./routes/ordersControl.js";
 
 const app = express();
+
+app.use(cors({
+  origin : "https://next-js-amazona.vercel.app",
+  credentials : true
+}));
+
 dotenv.config();
 const PORT = process.env.PORT || 5000;
-
-app.use(cors());
 
 // database connection
 mongoose
